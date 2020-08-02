@@ -15,3 +15,8 @@ MonoBehaviour:
   databaseData:
     numbersToSave:
     - numbersToSave: 1
+      ImageName: test
+      image: {fileID: 0}
+    - numbersToSave: 1
+      ImageName: test
+      image: {fileID: 0}
