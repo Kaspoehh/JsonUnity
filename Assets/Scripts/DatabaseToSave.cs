@@ -18,5 +18,4 @@ public class DatabaseData
 public class Data
 {
 	public int numbersToSave;
-
 }

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f86ccb237a343847afffaf84faf03c7, type: 3}
   m_Name: testDatabase
   m_EditorClassIdentifier: 
+  databaseData:
+    numbersToSave:
+    - numbersToSave: 1

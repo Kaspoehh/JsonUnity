@@ -233,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162b29a7955f2e4498bd1379bf096bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  databaseToSave: {fileID: 0}
+  database: {fileID: 11400000, guid: c252855ef3d444649bd30edf87604402, type: 2}
+  savePath: /save.json
 --- !u!4 &1209924307
 Transform:
   m_ObjectHideFlags: 0
