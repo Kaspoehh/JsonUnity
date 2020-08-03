@@ -31,7 +31,7 @@ public class DatabaseToSave : ScriptableObject
 	}
 
 	/*Saving And Loading*/
-	[ContextMenu("Save")]
+	[ContextMenu("Save Editable File")]
 	public void Save()
 	{
 		string json = JsonUtility.ToJson(databaseData, true);
