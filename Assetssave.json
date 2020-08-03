@@ -1,0 +1,18 @@
+{
+    "numbersToSave": [
+        {
+            "numbersToSave": 1,
+            "ImageName": "test2",
+            "image": {
+                "instanceID": 0
+            }
+        },
+        {
+            "numbersToSave": 4,
+            "ImageName": "tset2",
+            "image": {
+                "instanceID": 0
+            }
+        }
+    ]
+}

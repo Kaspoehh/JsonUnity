@@ -13,9 +13,10 @@ public class SaveLoad : MonoBehaviour
     public void Save()
     {
         Debug.Log(savePath + "The Save Path");
-		string saveData = JsonUtility.ToJson(database, true);
+		string saveData = JsonUtility.ToJson(this, true);
 		BinaryFormatter bf = new BinaryFormatter();
 		FileStream file = File.Create(string.Concat(Application.dataPath, savePath));
+		File.WriteAllText(file.ToString(), saveData);
 		bf.Serialize(file, saveData);
 		file.Close();
     }
@@ -23,12 +24,18 @@ public class SaveLoad : MonoBehaviour
     [ContextMenu("Load")]
     public void Load()
     {
-        if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+        if (File.Exists(string.Concat(Application.dataPath, savePath)))
         {
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(string.Concat(Application.dataPath, savePath), FileMode.Open);
-			JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), database);
+			//JsonUtility.FromJsonOverwrite(/*bf.Deserialize(file).ToString()*/file.ToString(), database.databaseData);
+			string json = File.ReadAllText(file.ToString());
+			JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
 			file.Close();
+		}
+		else
+		{
+			Debug.LogError("File doesnt excist yet");
 		}
     }
 
