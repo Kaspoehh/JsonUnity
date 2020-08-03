@@ -15,11 +15,11 @@ public class DatabaseToSave : ScriptableObject
 
 	public void LoadSprites()
 	{
-		for (int i = 0; i < databaseData.numbersToSave.Length; i++)
+		for (int i = 0; i < databaseData.data.Length; i++)
 		{
-			string imagePath = ("Images/" + databaseData.numbersToSave[i].ImageName);
+			string imagePath = ("Images/" + databaseData.data[i].ImageName);
 			var sprite = Resources.Load<Sprite>(imagePath);
-			databaseData.numbersToSave[i].image = sprite;
+			databaseData.data[i].image = sprite;
 		}
 	}
 
@@ -27,7 +27,7 @@ public class DatabaseToSave : ScriptableObject
 	[ContextMenu("Reset Database")]
 	public void Reset()
 	{
-		databaseData.numbersToSave = null; 
+		databaseData.data = null; 
 	}
 
 	/*Saving And Loading*/
@@ -60,7 +60,7 @@ public class DatabaseToSave : ScriptableObject
 [Serializable]
 public class DatabaseData
 {
-	public Data[] numbersToSave = new Data[5];
+	public Data[] data = new Data[5];
 }
 
 [Serializable]
